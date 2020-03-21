@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="./jq/jquery.js"></script>
+    <title>Chatting App</title>
+</head>
+<body>
+    <main>
+        <section class="header">
+            <h1>HABERCI</h1>
+        </section>
+        <section class="content">
+            <input type="text"  id = "name" placeholder="Name">
+            <br>
+            <textarea id = "message" placeholder="Your Message Here"></textarea>
+            <button id ="sendBtn">Send</button>
+        </section>
+        <section class="messages">
+        
+        </section>
+    </main>
+    
+    
+    <script>
+        var socket =  io();
+         $(() => {
+             $("#sendBtn").click(()=>{
+                 console.log($("#name").val());
+                 
+                 sendMessage({name: $("#name").val(), message: $("#message").val()});
+             })
+     
+             getMessages()
+         })
+     
+         socket.on('message', addMessages)
+     
+         function addMessages(message){
+             console.log(message);
+             
+             $(".messages").append(`<h4> ${message.name} </h4> <p> ${message.message} </p>`)
+         }
+     
+         function getMessages(){
+           $.get('http://localhost:3000/messages', (data) => {
+             data.forEach(addMessages);
+           })
+         }
+     
+         function sendMessage(message){
+           $.post('http://localhost:3000/messages', message)
+         }
+     </script>
+    
+</body>
+</html>

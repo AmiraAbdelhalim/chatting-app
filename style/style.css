@@ -1,0 +1,66 @@
+body {
+    background-image: url("../img/chat_background.png");
+    background-size: 100%;
+}
+.header{
+    /* color: rgb(70, 67, 67); */
+    font-size: xx-large;
+    font-family: 'Courier New', Courier, monospace;
+    box-sizing: border-box;
+}
+
+input[type=text]{
+    width: 20%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: left;
+    margin-left: 3em;
+}
+
+textarea{
+    width: 70%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: left;
+    margin-left: 3em;
+}
+
+#sendBtn{
+    background-color: darkgray;
+    color: ghostwhite;
+    display: block;
+    text-align: left;
+    margin-left: 3em;
+    border-radius: 12px;
+    border: none;
+    padding: 15px 32px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.messages{
+    background-color: ghostwhite;
+    color: grey;
+    width: 70%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    text-align: left;
+    margin-left: 3em;
+}
+
+  
+  
+  
+ 
